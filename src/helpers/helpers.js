@@ -18,6 +18,9 @@ export function sum(...numbers) {
 }
 
 export function multiply(a, b) {
+  const multipleArgs = arguments.length > 1;
+  if (!multipleArgs) return null;
+  
   if (typeof a !== 'number' || typeof b !== 'number') {
     throw new Error('numbers required');
   }
