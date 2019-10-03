@@ -90,8 +90,9 @@ describe('Counter component', () => {
     for(var i =0 ; i < 9; i++) {
       rtl.fireEvent.click(incButton);
     }
-    expect(tools.queryByText(/-5/)).not.toBeInTheDocument();
-    expect(tools.queryByText(/5/)).toBeInTheDocument();
+    // expect(tools.queryByText(/-5/)).not.toBeInTheDocument();
+    // expect(tools.queryByText(/5/)).toBeInTheDocument();
+    expect(tools.queryByTestId('h5-upper')).toBeInTheDocument();
   });
 
   it('shows a warning once we hit the lower limit of the counter', () => {
@@ -102,7 +103,9 @@ describe('Counter component', () => {
     for(var i =0 ; i < 9; i++) {
       rtl.fireEvent.click(decButton);
     }
-    expect(tools.queryByText(/5/)).not.toBeInTheDocument();
-    expect(tools.queryByText(/-5/)).toBeInTheDocument();
+    // expect(tools.queryByText(/5/)).not.toBeInTheDocument();
+    // expect(tools.queryByText(/-5/)).toBeInTheDocument();
+    expect(tools.queryByTestId('h5-lower')).toBeInTheDocument();
+
   });
 });
